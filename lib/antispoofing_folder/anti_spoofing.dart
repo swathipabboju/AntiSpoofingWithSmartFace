@@ -52,8 +52,6 @@ FaceAntiSpoofing._();
   print(text); */
 
       // Judge the clarity of the second picture before live detection
-      interpreter?.close();
-
       return score1.toString();
       
   }
@@ -76,7 +74,7 @@ FaceAntiSpoofing._();
    */
   static double _antiSpoofing(imglib.Image bitmap) {
       // Resize the face to a size of 256X256, because the shape of the placeholder that needs feed data below is (1, 256, 256, 3)
-      print("antispoofing called");
+      print("antispoofing called anti_spoofing ");
       //img.Image? image = img.decodeImage(cropSaveFile!.readAsBytesSync());
       // Resize the image
       imglib.Image resizedImage = imglib.copyResize(bitmap!,
@@ -100,7 +98,7 @@ FaceAntiSpoofing._();
     };
 
           try {
-              interpreter!.runForMultipleInputs([input], outputs);
+             // interpreter!.runForMultipleInputs([input], outputs);
           } catch (e) {
               print("Error during model inference: $e");
           }

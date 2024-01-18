@@ -4,8 +4,8 @@ import 'package:tflite_flutter/tflite_flutter.dart' as tfl;
 import 'package:image/image.dart' as imglib;
 //import 'package:quiver/collection.dart';
 
-class FaceAntiSpoofing {
-  FaceAntiSpoofing._();
+class FaceAntiSpoofingBackup {
+  FaceAntiSpoofingBackup._();
 
   static const String MODEL_FILE = "assets/FaceAntiSpoofing.tflite";
   static const INPUT_IMAGE_SIZE =
@@ -29,7 +29,7 @@ class FaceAntiSpoofing {
     return score1.toString();
   }
 
-  static Future loadSpoofModel() async {
+  static Future loadSpoofModelbackup() async {
     try {
       interpreter = await tfl.Interpreter.fromAsset(MODEL_FILE);
 

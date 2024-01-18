@@ -1,10 +1,8 @@
 import 'dart:io';
-import 'package:camera/camera.dart';
 import 'package:face_camera/face_camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image/image.dart' as img;
-import 'package:samert_camera_flutter/antispoofing_folder/anti_spoofing.dart';
+import 'package:samert_camera_flutter/backup.dart';
 
 
 class FaceRecognitionView extends StatefulWidget {
@@ -42,9 +40,8 @@ class _FaceRecognitionViewState extends State<FaceRecognitionView> {
   void initState() {
     super.initState();
     print("initcalled");
-     FaceAntiSpoofing.loadSpoofModel();
+     FaceAntiSpoofingBackup.loadSpoofModelbackup();
 
-   
   }
 
 
@@ -81,7 +78,7 @@ class _FaceRecognitionViewState extends State<FaceRecognitionView> {
               setState(() {
                 detectedFace = face;
                 cropImage = image;
-               antiSpoofingScore =  FaceAntiSpoofing.antiSpoofing(cropImage!);
+               antiSpoofingScore =  FaceAntiSpoofingBackup.antiSpoofing(cropImage!);
               });
 
           
