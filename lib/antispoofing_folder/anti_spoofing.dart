@@ -52,8 +52,10 @@ FaceAntiSpoofing._();
   print(text); */
 
       // Judge the clarity of the second picture before live detection
+      interpreter?.close();
 
       return score1.toString();
+      
   }
 
   static Future loadSpoofModel() async {
